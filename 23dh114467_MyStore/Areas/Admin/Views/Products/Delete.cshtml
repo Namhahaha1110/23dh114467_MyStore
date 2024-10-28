@@ -8,32 +8,11 @@
 <h2 class="bg-success">XÓA SẢN PHẨM</h2>
 
 <h4 class="alert-danger>Bạn chắc chắn muốn xóa sản phẩm này không?</h4>
-<div class="container-fluid">
-    <dl class="dl-horizontal">
-        <dt> Tên sản phẩm </dt>
+@Html.Partial("PVProInfo",Model)
 
-        <dd>@Html.DisplayFor(model => model.ProductName) </dd>
-
-        <dt> Mô tả </dt>
-
-        <dd> @Html.DisplayFor(model => model.ProductDescription) </dd>
-
-        <dt> Đơn giá </dt>
-
-        <dd> @Html.DisplayFor(model => model.ProductPrice) </dd>
-
-        <dt> Hình ảnh </dt>
-
-        <dd> @Html.DisplayFor(model => model.ProductImage) </dd>
-
-        <dt> Danh mục </dt>
-
-        <dd> @Html.DisplayFor(model => model.Category.CategoryName) </dd>
-
-        <dt style="padding:10p"></dt>
-        <dd style="padding:10p">
-            @Html.ActionLink("Sửa", "Edit", new { id = Model.ProductID }, new { @class = "btn btn-primary btn-sm" })
-            @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-primary btn-sm" })
-        </dd>
-    </dl>
+<div class="form-group">
+    <div class="col-md-offset-3 col-md-9">
+        @Html.ActionLink("Xóa", "Delete", new { id = Model.ProductID }, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Quay lại danh sách", "Index", null, new { @class = "btn btn-primary" })
+    </div>
 </div>

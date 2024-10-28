@@ -5,21 +5,30 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
+<head>
+    <style>
+        img{
+            height:150px;
+            max-width:150px;
+        }
+    </style>
+</head>
 <h2 class="bg-success">DANH SÁCH SẢN PHẨM   </h2>
 
 
 <table class="table bg-info container-fluid">
     <tr>
-        <th class="bg-success col-md-3">
-            Tên sản phẩm
-        </th>
         <th class="bg-success col-md-2">
             Hình ảnh
         </th>
+        <th class="bg-success col-md-3">
+            Tên sản phẩm
+        </th>
+
         <th class="bg-success col-md-1">
             Đơn giá
         </th>
-        
+
         <th class="bg-success col-md-2 ">
             Danh mục
         </th>
@@ -30,11 +39,12 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
+                <img src="@Html.DisplayFor(modelItem => item.ProductImage)" />
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ProductImage)
+                @Html.DisplayFor(modelItem => item.ProductName)
             </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.ProductPrice)
             </td>
@@ -51,6 +61,8 @@
     }
 
 </table>
-<p>
-    @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-primary btn-sm" })
-</p>
+<div class="form-group">
+    <div class="col-md-offset-8 col-md-4">
+       @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-primary" })
+    </div>
+</div>
