@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using _23dh114467_MyStore.Models;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using _23dh114467_MyStore.Models;
 
 namespace _23dh114467_MyStore.Areas.Admin.Controllers
 {
